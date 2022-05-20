@@ -33,6 +33,7 @@ a {
 header {
   width: 100%;
   background-color: var(--almost-white);
+  position: relative;
 }
 
 header .container {
@@ -42,7 +43,7 @@ header .container {
   height: 7rem;
   padding: 0 1.5rem;
 }
-@media (min-width: 720px) {
+@media (min-width: 820px) {
   header .container {
     justify-content: start;
     height: 9rem;
@@ -58,21 +59,41 @@ header .logo img {
   min-width: 8rem;
 }
 
-header nav {
+header nav,
+header nav .navbar,
+header nav .btns {
   display: flex;
-  width: 100%;
-  margin-left: 5.5rem;
-  justify-content: flex-end;
-}
-@media (min-width: 720px) {
-  header nav {
-    justify-content: space-between;
-  }
-}
-header nav .navbar {
-  justify-items: start;
+  flex-direction: column;
 }
 
+header nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--almost-white);
+  height: 100vh;
+  /* display: none; */
+  width: 250px;
+}
+
+@media (min-width: 820px) {
+  header nav {
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 5.5rem;
+    flex-direction: row;
+  }
+}
+header nav .close {
+  align-self: flex-end;
+  margin: 2rem;
+}
+
+header nav .navbar > li {
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
 header nav a {
   font-size: 1.6rem;
   color: var(--medium-gray);
@@ -87,13 +108,6 @@ header nav a:hover {
   color: var(--almost-Black);
 }
 
-header nav .navbar > li {
-  padding-right: 3.5rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
 header nav .navbar li > a {
   font-size: 1.6rem;
   display: flex;
@@ -103,6 +117,7 @@ header nav .navbar li > a {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  padding-left: 2.5rem;
 }
 
 header nav .navbar li > a svg {
@@ -123,10 +138,14 @@ header nav .navbar li {
   position: relative;
 }
 
+header nav .navbar > li:last-child {
+  padding: 2.5rem 0;
+}
+
 header nav .navbar li > a:hover svg path {
   stroke: var(--almost-Black);
 }
-header nav .navbar li > a:hover svg {
+header nav .navbar li > a.rotate svg {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -135,35 +154,37 @@ header nav .navbar li > a:hover svg {
 }
 
 header nav .dropdown {
-  position: absolute;
-  z-index: -1;
-  background-color: white;
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
   -moz-border-radius: 1.2rem;
   -ms-border-radius: 1.2rem;
   -o-border-radius: 1.2rem;
-  box-shadow: 0 0 15px 0 rgb(218, 216, 216);
-  top: 10rem;
-  padding: 1rem;
-  opacity: 0;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  padding: 0 1rem;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  overflow: hidden;
+  height: 0;
+  padding: 2.5rem 0 0 2.5rem;
 }
 
-header nav .navbar li:first-child:hover .dropdown,
+header nav .dropdown.expand {
+  padding: 2.5rem 0 2.5rem 2.5rem;
+  height: 100%;
+}
+
+/* header nav .navbar li:first-child:hover .dropdown,
 header nav .navbar li:nth-child(2):hover .dropdown {
   top: 4.5rem;
   opacity: 1;
   z-index: 10;
-}
+} */
 
-header nav .navbar li:first-child .dropdown {
+/* header nav .navbar li:first-child .dropdown {
   right: 3.5rem;
-}
+} */
 
 header nav .dropdown li a {
   padding: 1rem;
@@ -175,13 +196,22 @@ header nav .dropdown li a img {
   margin-right: 2rem;
 }
 
-header nav .burger {
+header .burger {
   cursor: pointer;
 }
-@media (min-width: 720px) {
-  header nav .burger {
+@media (min-width: 820px) {
+  header .burger {
     display: none;
   }
+}
+
+header nav .btns {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+header nav .btns a {
+  align-items: flex-start;
 }
 
 header nav .btns a.register {
@@ -192,22 +222,16 @@ header nav .btns a.register {
   -moz-border-radius: 1.2rem;
   -ms-border-radius: 1.2rem;
   -o-border-radius: 1.2rem;
-  margin-left: 3.5rem;
+  margin: 2.5rem;
 }
 
 header nav .btns a.register:hover {
   border-color: var(--almost-Black);
 }
 
-header nav .navbar,
-header nav .btns {
-  display: none;
-}
-
-@media (min-width: 720px) {
+@media (min-width: 820px) {
   header nav .navbar,
   header nav .btns {
-    display: flex;
     align-items: center;
   }
 }
@@ -233,7 +257,7 @@ main {
     flex-direction: row-reverse;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 7rem 0;
+    padding: 6.5rem 0;
     width: max(680px, 80%);
     align-items: flex-end;
   }

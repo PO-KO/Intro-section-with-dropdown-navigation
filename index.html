@@ -1,39 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container">
+        <a href="#home" class="logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </a>
+        <nav>
+          <ul class="navbar">
+            <li>
+              <a href="#features"
+                >Features
+                <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    stroke="#686868"
+                    stroke-width="1.5"
+                    fill="none"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </a>
+              <ul class="dropdown">
+                <li>
+                  <a href="#todo-list"
+                    ><img src="./images/icon-todo.svg" alt="" />Todo List
+                  </a>
+                </li>
+                <li>
+                  <a href="#calender"
+                    ><img src="./images/icon-calendar.svg" alt="" /> Calender</a
+                  >
+                </li>
+                <li>
+                  <a href="#reminders"
+                    ><img src="./images/icon-reminders.svg" alt="" />
+                    Reminders</a
+                  >
+                </li>
+                <li>
+                  <a href="#planning"
+                    ><img src="./images/icon-planning.svg" alt="" />Planning</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#company"
+                >Company<svg
+                  width="10"
+                  height="6"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke="#686868"
+                    stroke-width="1.5"
+                    fill="none"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </a>
+              <ul class="dropdown">
+                <li><a href="#history">History</a></li>
+                <li><a href="#our-team">Our Team</a></li>
+                <li><a href="#blog">Blog</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#careers">Careers</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+          </ul>
+          <div class="btns">
+            <a calss="login" href="#login">Login</a>
+            <a class="register" href="#register">Register</a>
+          </div>
+          <img class="burger" id="burger" src="./images/icon-menu.svg" alt="" />
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Start Hero -->
+    <main>
+      <div class="hero">
+        <section class="hero-img">
+          <img src="./images/image-hero-desktop.png" alt="" class="desktop" />
+          <img src="./images/image-hero-mobile.png" alt="" class="mobile" />
+        </section>
+        <section class="info">
+          <h1><span>Make</span> remote work</h1>
+          <p>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button>Learn more</button>
+          <section class="clients">
+            <img src="./images/client-databiz.svg" alt="" />
+            <img src="./images/client-audiophile.svg" alt="" />
+            <img src="./images/client-meet.svg" alt="" />
+            <img src="./images/client-maker.svg" alt="" />
+          </section>
+        </section>
+      </div>
+    </main>
+    <!-- End Hero -->
+  </body>
 </html>

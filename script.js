@@ -92,4 +92,4 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// When the user clicks anywhere outside of the modal, close it
+

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"); */
 
 * {
   box-sizing: border-box;
@@ -49,11 +49,25 @@ header .logo {
 header aside {
   position: absolute;
   height: 100vh;
-  z-index: -5;
+  z-index: -8;
   top: 0;
   right: 0;
   overflow: hidden;
   height: 100%;
+}
+
+@media (min-width: 920px) {
+  header aside {
+    position: static;
+    overflow: visible;
+    height: auto;
+    width: 88%;
+    margin-left: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: auto;
+  }
 }
 
 header nav {
@@ -76,6 +90,22 @@ header nav {
   height: 100%;
 }
 
+@media (min-width: 920px) {
+  header nav {
+    flex-direction: row;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    justify-content: space-between;
+  }
+}
+
 header nav.open {
   transform: translateX(0);
   -webkit-transform: translateX(0);
@@ -93,12 +123,36 @@ header nav.open {
   display: none;
 }
 
+@media (min-width: 920px) {
+  .overlay {
+    display: none !important;
+  }
+}
+
 header nav .close {
   align-self: flex-end;
 }
 
+@media (min-width: 920px) {
+  header nav .close {
+    display: none;
+  }
+  header .burger {
+    display: none;
+  }
+}
+
 header nav .navbar {
   margin: 0.9rem 0 3.9rem;
+}
+
+@media (min-width: 920px) {
+  header nav .navbar {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 header nav .navbar > li > a {
@@ -106,9 +160,25 @@ header nav .navbar > li > a {
   overflow: hidden;
 }
 
+@media (min-width: 920px) {
+  header nav .navbar > li > a {
+    padding: 0;
+    padding-right: 5rem;
+  }
+}
+
 header nav a {
   font-size: 1.6rem;
   color: var(--medium-gray);
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: var(--almost-Black);
 }
 
 header nav li:first-child a,
@@ -118,8 +188,25 @@ header nav li:nth-child(2) a {
   gap: 1.5rem;
 }
 
+@media (min-width: 920px) {
+  header nav li:first-child,
+  header nav li:nth-child(2) {
+    position: relative;
+  }
+  header nav li:first-child a,
+  header nav li:nth-child(2) a {
+    gap: 0.7rem;
+  }
+}
+
 header nav .navbar > li:last-child {
   padding-top: 2.3rem;
+}
+
+@media (min-width: 920px) {
+  header nav .navbar > li:last-child {
+    padding: 0;
+  }
 }
 
 header nav .dropdown {
@@ -130,6 +217,33 @@ header nav .dropdown {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
   overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  header nav .dropdown {
+    height: auto;
+    position: absolute;
+    background-color: #fff;
+    padding: 2.3rem;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 45px;
+    top: 7rem;
+    z-index: -4;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: visible;
+    opacity: 0;
+  }
+  header nav li:first-child .dropdown {
+    right: 5rem;
+  }
+
+  header nav .dropdown.hover {
+    opacity: 1;
+    top: 3.5rem;
+  }
 }
 
 header nav .dropdown li:not(:last-child) a {
@@ -146,6 +260,12 @@ header nav li:nth-child(2) .dropdown.expand {
 header nav .dropdown li {
   display: flex;
   padding-left: 2rem;
+}
+
+@media (min-width: 920px) {
+  header nav .dropdown li {
+    padding: 0;
+  }
 }
 
 header nav li svg {
@@ -170,6 +290,17 @@ header nav .btns a {
   font-size: 1.4rem;
 }
 
+@media (min-width: 920px) {
+  header nav .btns {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  header nav .btns a {
+    font-size: 1.6rem;
+  }
+}
+
 header nav .btns a.register {
   margin-top: 1.5rem;
   border: 0.2rem solid var(--medium-gray);
@@ -179,6 +310,13 @@ header nav .btns a.register {
   -moz-border-radius: 1.3rem;
   -ms-border-radius: 1.3rem;
   -o-border-radius: 1.3rem;
+}
+
+@media (min-width: 920px) {
+  header nav .btns a.register {
+    margin: 0;
+    padding: 1rem 2rem;
+  }
 }
 
 header nav .btns a.register:hover {
@@ -191,6 +329,7 @@ header nav .btns a.register:hover {
 main {
   height: calc(100vh - 6rem);
   text-align: center;
+  background-color: var(--almost-white);
 }
 .hero .hero-img .desktop {
   display: none;

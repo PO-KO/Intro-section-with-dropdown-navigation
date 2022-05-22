@@ -47,6 +47,10 @@ window.onresize = function () {
     overlay.style.display = "none";
     nav.classList.remove("open");
     nav.parentElement.style.zIndex = 10;
+    dropdownOne.querySelector("svg").classList.remove("rotate");
+    dropdownTwo.querySelector("svg").classList.remove("rotate");
+    dropdownOne.lastElementChild.classList.remove("expand");
+    dropdownTwo.lastElementChild.classList.remove("expand");
   }
 };
 function showDrop() {
@@ -56,6 +60,7 @@ function showDrop() {
     this.querySelector("svg").classList.toggle("rotate");
     this.lastElementChild.classList.toggle("expand");
   } else {
+    this.querySelector("svg").classList.toggle("rotate");
     if (this.lastElementChild.classList.contains("hover")) {
       this.lastElementChild.classList.remove("hover");
       setTimeout(() => {
@@ -80,8 +85,10 @@ window.addEventListener("click", function (event) {
   ) {
     dropdownOne.lastElementChild.style.display = "none";
     dropdownOne.lastElementChild.classList.remove("hover");
+    dropdownOne.querySelector("svg").classList.remove("rotate");
     dropdownTwo.lastElementChild.style.display = "none";
     dropdownTwo.lastElementChild.classList.remove("hover");
+    dropdownTwo.querySelector("svg").classList.remove("rotate");
   }
 });
 
